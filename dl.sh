@@ -1,2 +1,2 @@
 #!/bin/sh -x
-wget --no-clobber https://github.com/shuffle2/rockbox_psgroove/archive/psgroove-dev.tar.gz
+wget --no-clobber http://staticperl.schmorp.de/bigperl.bin http://ftp.gnu.org/gnu/texinfo/texinfo-4.13a.tar.gz

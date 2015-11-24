@@ -19,6 +19,8 @@ RUN git clone git://github.com/shuffle2/rockbox_psgroove.git
 RUN cd rockbox_psgroove && git checkout psgroove-dev && git submodule init && git submodule update
 RUN (cd rockbox_psgroove && sed -i -e 's/binopts=""/binopts="--disable-werror"/' tools/rockboxdev.sh)
 RUN (cd rockbox_psgroove && echo "e" | sh -x tools/rockboxdev.sh)
+RUN cd rockbox_psgroove/firmware/usbstack/pl3 && git checkout master && grep -rinH 3_55 .
+RUN apt-get install -y vim
 #RUN curl -L https://github.com/kylon/ps3toolchain/archive/latest-and-greatest.tar.gz | gzip -cd | tar x
 #RUN curl -L http://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz | gzip -cd | tar x && cd automake-1.15 && ./configure && make && make install
 #RUN apt-get update && apt-get install -y bison
